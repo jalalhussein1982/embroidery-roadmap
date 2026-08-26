@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Partner Prospecting Pipeline — Anna's Adorable Creations</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="04">
+<div class="shell">
+
+<aside class="side">
+  <a class="brand" href="01-strategy.html">
+    <span class="mark">🪡</span>
+    <span class="btxt"><b>Anna's Adorable Creations</b><span>Instagram roadmap · Praha</span></span>
+  </a>
+  <p class="eyebrow">The five files</p>
+  <ul class="nav">
+    <li><a href="01-strategy.html" data-page="01"><span class="n">01</span><span class="t">The Plan<em>Why, who, in what order</em></span><span class="done"></span></a></li>
+    <li><a href="02-page-setup.html" data-page="02"><span class="n">02</span><span class="t">Page Setup<em>The main checklist</em></span><span class="done"></span></a></li>
+    <li><a href="03-copy.html" data-page="03"><span class="n">03</span><span class="t">Bio &amp; Post Copy<em>Ready to paste, CZ/EN</em></span><span class="done"></span></a></li>
+    <li><a href="04-partners.html" data-page="04" aria-current="page"><span class="n">04</span><span class="t">Partner Pipeline<em>Find the buyers</em></span><span class="done"></span></a></li>
+    <li><a href="05-legal.html" data-page="05"><span class="n">05</span><span class="t">Tax &amp; Legal<em>Do this first</em></span><span class="done"></span></a></li>
+  </ul>
+  <div class="side-foot">
+    <p>Ticks are saved in this browser as you go. Backup, restore and save-link controls are at the foot of the page.</p>
+  </div>
+</aside>
+
+<main>
+  <div class="progress">
+    <div class="wrap">
+      <span class="label">Pipeline</span>
+      <span class="bar"><i></i></span>
+      <span class="count">0 / 0 · 0%</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <header class="pagehead">
+      <span class="kicker">File 04 · Weeks 2–8</span>
+      <h1>Partner Prospecting Pipeline</h1>
+      <p class="lede">Build a list of Prague businesses that meet gift-givers before Anna does, score them, approach them by hand, and turn 4–6 of them into ongoing referral sources.</p>
+    </header>
+
+    <div class="callout stop">
+      <span class="ct">The one rule</span>
+      <p>This is a list of <strong>partners</strong>, not customers. Nothing in this pipeline sends an automated message — ever.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>60–120</b><span>businesses collected and scored</span></div>
+      <div class="stat"><b>40</b><span>actually contacted (Tier A + B)</span></div>
+      <div class="stat"><b>8–12</b><span>realistic replies</span></div>
+      <div class="stat"><b>4–6</b><span>active partnerships — the goal</span></div>
+    </div>
+
+    <h2 id="targets"><span class="num">Step 1</span>Target types</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Type</th><th>Why them</th><th>What to offer</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Newborn / maternity / family photographers</strong></td><td>See every birth weeks early; need props; tag suppliers by habit</td><td>Free hoop as a prop, tagged credit, referral discount for their clients</td><td class="stars">★★★</td></tr>
+          <tr><td><strong>Wedding planners &amp; coordinators</strong></td><td>Control the vendor list and the gift suggestions</td><td>Free ring-tray sample, listing in their vendor pack</td><td class="stars">★★★</td></tr>
+          <tr><td><strong>Baby &amp; kids concept stores</strong> <span class="small">(physical, Praha 1–7)</span></td><td>Shelf for the “in stock” line; walk-in gift buyers</td><td>Consignment, 3–5 pieces, 25–30% margin</td><td class="stars">★★★</td></tr>
+          <tr><td><strong>Wedding photographers, florists, stationers</strong></td><td>Adjacent creatives, same couples</td><td>Cross-post, tag exchange, styled shoot</td><td class="stars">★★</td></tr>
+          <tr><td><strong>Doulas, midwives, prenatal yoga / pilates studios</strong></td><td>Gatekeep expecting parents, especially expats</td><td>Voucher for their clients, feature in their newsletter</td><td class="stars">★★</td></tr>
+          <tr><td><strong>Bilingual kindergartens, expat parent groups, English playgroups</strong></td><td>Concentrated expat-parent audience</td><td>Birthday-gift partnership, featured maker</td><td class="stars">★★</td></tr>
+          <tr><td><strong>Czech handmade marketplaces &amp; markets</strong> <span class="small">(Fler, Dyzajn market, Mint Market)</span></td><td>Distribution and trust</td><td>Listing / stall</td><td class="stars">★★</td></tr>
+          <tr><td><strong>Pet groomers, dog boutiques, vets with Instagram</strong></td><td>Pet-portrait channel</td><td>Sample portrait of the shop’s own dog</td><td class="stars">★</td></tr>
+          <tr><td><strong>Expat services</strong> <span class="small">(relocation agencies, coworking, FB group admins)</span></td><td>Aggregate English speakers</td><td>“Featured local maker” post</td><td class="stars">★</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="collect"><span class="num">Step 2</span>Collection — the Apify workflow</h2>
+    <div class="callout warn">
+      <span class="ct">Boundary</span>
+      <p>Use Apify only to collect <strong>public business profiles</strong>. Never private individuals. See <a href="05-legal.html#gdpr">file 05 §5</a>.</p>
+    </div>
+
+    <ul class="checklist">
+      <li><label class="check"><input type="checkbox" data-k="04-w1"><span class="box"></span><span class="txt"><strong>1 · Seed by Google Places</strong> (Apify “Google Maps Scraper”), Prague bounding box, queries below. Keep: <code>name, category, address, district, website, phone, rating, reviewsCount, instagramUrl</code>.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-w2"><span class="box"></span><span class="txt"><strong>2 · Resolve the Instagram handle.</strong> For rows with a website: fetch the site and regex <code>instagram.com/([A-Za-z0-9._]+)</code>. For the rest: Apify “Instagram Search Scraper” by business name + “Praha”.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-w3"><span class="box"></span><span class="txt"><strong>3 · Enrich</strong> (Apify “Instagram Profile Scraper”): <code>followersCount, followsCount, postsCount, isBusinessAccount, businessCategoryName, biography, externalUrl, lastPostDate, avgLikes, avgComments</code> over the last 12 posts.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-w4"><span class="box"></span><span class="txt"><strong>4 · Overlap check.</strong> For the top ~30 candidates, pull the last 12 posts and count <code>@</code> mentions of other local makers and suppliers. <em>A business that already tags suppliers is 3× more likely to tag Anna.</em></span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-w5"><span class="box"></span><span class="txt"><strong><code>partners.csv</code> exported</strong> — expect 60–120 rows after filtering.</span></label></li>
+    </ul>
+
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">Google Places seed queries</span><button class="btn-copy">Copy</button></div>
+<pre>novorozenecký fotograf Praha · newborn photographer Prague
+svatební koordinátor Praha · wedding planner Prague
+dětský obchod Praha · baby boutique Prague · kids concept store Prague
+dula Praha · prenatal yoga Prague · těhotenské cvičení Praha
+bilingual kindergarten Prague · mateřská školka anglická Praha
+psí salon Praha · dog grooming Prague</pre>
+    </div>
+
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">partners.csv — column headers</span><button class="btn-copy">Copy</button></div>
+<pre>handle,name,type,district,followers,last_post,tags_suppliers,bilingual,score,tier,status,first_contact,follow_up,notes</pre>
+    </div>
+    <p class="small"><strong>status</strong> values: <code>new</code> → <code>warming</code> → <code>contacted</code> → <code>replied</code> → <code>sample_sent</code> → <code>active</code> / <code>declined</code></p>
+
+    <h2 id="scoring"><span class="num">Step 3</span>Scoring schema — 0 to 100</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Criterion</th><th class="num-col">Weight</th><th>Scoring rule</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Audience fit</strong><br><span class="small">their followers are gift-givers, expecting parents or couples</span></td><td class="num-col"><strong>25</strong></td><td>Photographer / planner / baby store = 25 · Doula / yoga / kindergarten = 18 · Pet = 12 · Expat services = 10 · Other = 0</td></tr>
+          <tr><td><strong>Local density</strong><br><span class="small">Prague, physical presence</span></td><td class="num-col"><strong>15</strong></td><td>Prague address + physical premises = 15 · Prague, online only = 10 · Central Bohemia = 5 · else 0</td></tr>
+          <tr><td><strong>Reach in the right band</strong></td><td class="num-col"><strong>15</strong></td><td>800–8,000 followers = 15 · 8k–30k = 10 · 300–800 = 8 · &gt;30k = 4 <span class="small">(won’t reply)</span> · &lt;300 = 2</td></tr>
+          <tr><td><strong>Tags suppliers already</strong></td><td class="num-col"><strong>15</strong></td><td>≥3 supplier mentions in last 12 posts = 15 · 1–2 = 8 · 0 = 0</td></tr>
+          <tr><td><strong>Activity</strong></td><td class="num-col"><strong>10</strong></td><td>Last post ≤7 days = 10 · ≤30 days = 6 · ≤90 days = 2 · else 0</td></tr>
+          <tr><td><strong>Engagement quality</strong></td><td class="num-col"><strong>10</strong></td><td>avgComments / followers ≥1% = 10 · ≥0.5% = 6 · else 2</td></tr>
+          <tr><td><strong>Bilingual / expat-facing</strong></td><td class="num-col"><strong>10</strong></td><td>Bio or posts in EN, or CZ+EN = 10 · CZ only = 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout stop">
+      <span class="ct">Score 0 — exclude entirely</span>
+      <p>Sells embroidery or personalised gifts themselves (a competitor) · chain or franchise · no Instagram · account private.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card"><h4 style="margin-top:0">Tier A · ≥70</h4><p style="margin-bottom:0">Physical sample + personal message.<br><strong>Target: 15 businesses.</strong></p></div>
+      <div class="card"><h4 style="margin-top:0">Tier B · 50–69</h4><p style="margin-bottom:0">Message only, no sample.<br><strong>Target: 25 businesses.</strong></p></div>
+      <div class="card"><h4 style="margin-top:0">Tier C · &lt;50</h4><p style="margin-bottom:0">Follow and engage.<br><strong>No outreach yet.</strong></p></div>
+    </div>
+
+    <ul class="checklist">
+      <li><label class="check"><input type="checkbox" data-k="04-s1"><span class="box"></span><span class="txt"><strong>Every row scored</strong> against the seven criteria.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-s2"><span class="box"></span><span class="txt"><strong>Exclusions applied</strong> — competitors, chains, private and Instagram-less accounts zeroed out.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-s3"><span class="box"></span><span class="txt"><strong>Tiers assigned</strong> — 15 in A, 25 in B, the rest in C.</span></label></li>
+    </ul>
+
+    <h2 id="outreach"><span class="num">Step 4</span>Outreach protocol — by hand</h2>
+    <ol class="timeline">
+      <li><b>Days 1–7 · Warm up</b><span>Follow, like 3–5 posts, leave 2 real comments. Do this <em>before</em> any message. It is the difference between a 5% reply rate and 25%.</span></li>
+      <li><b>Day 8 · Contact</b><span>One message. DM if they are active on Instagram, email if the site lists one. <strong>Maximum 5 new contacts per day.</strong> Personalise the first line with something specific from their feed.</span></li>
+      <li><b>Day 18 · Follow up</b><span>One short follow-up. Then stop.</span></li>
+      <li><b>On reply · Sample</b><span>Tier A, or proactively for the top 5: hand-deliver in Prague, photograph the handover, post about it and tag them. This is content regardless of the outcome.</span></li>
+      <li><b>Weekly · Review</b><span>Update <code>status</code> in the sheet. Count replies, samples out, tags received.</span></li>
+    </ol>
+
+    <ul class="checklist">
+      <li><label class="check"><input type="checkbox" data-k="04-o1"><span class="box"></span><span class="txt"><strong>Tier A warm-up started</strong> — following, liking, commenting.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-o2"><span class="box"></span><span class="txt"><strong>First 15 Tier A messages sent</strong>, each personalised, never more than 5 in a day.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-o3"><span class="box"></span><span class="txt"><strong>25 Tier B messages sent.</strong></span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-o4"><span class="box"></span><span class="txt"><strong>Top 5 samples made, delivered and photographed.</strong></span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-o5"><span class="box"></span><span class="txt"><strong>Follow-ups sent at day 18</strong> — one each, then closed.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-o6"><span class="box"></span><span class="txt"><strong>Weekly pipeline review in the tracking sheet.</strong></span></label></li>
+    </ul>
+
+    <hr class="stitch">
+
+    <h2 id="templates"><span class="num">Step 5</span>Message templates</h2>
+    <p class="small">Replace <code>[jméno]</code> / <code>[name]</code> and always rewrite the bracketed specific detail — an unchanged template reads as an unchanged template.</p>
+
+    <h3>Newborn photographer — Čeština</h3>
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">DM · CZ</span><button class="btn-copy">Copy</button></div>
+<pre>Dobrý den [jméno],
+
+sleduju vaše novorozenecké focení — [konkrétní věc, např. série s bílým pozadím z minulého týdne] je krásná.
+
+Vyšívám ručně na míru obrázky se jménem miminka a chtěla bych vám jeden věnovat jako rekvizitu do studia — žádné podmínky, jen bych byla ráda za označení, když se objeví na fotce. Rodiče se na dárek se jménem často ptají a ráda vám k tomu dám i slevový kód pro vaše klienty.
+
+Můžu vám ho příští týden přinést?
+
+Anna, @anna_s_adorable_creations</pre>
+    </div>
+
+    <h3>Newborn photographer — English</h3>
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">DM · EN</span><button class="btn-copy">Copy</button></div>
+<pre>Hi [name],
+
+I've been following your newborn work — [specific thing] is beautiful.
+
+I hand-embroider personalised name hoops in Prague and I'd like to give you one as a studio prop — no strings, I'd just appreciate a tag if it ends up in a photo. Parents often ask about a gift with the baby's name, so I'm happy to set up a discount code for your clients too.
+
+Could I drop it off next week?
+
+Anna, @anna_s_adorable_creations</pre>
+    </div>
+
+    <h3>Wedding planner — Čeština</h3>
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">DM · CZ</span><button class="btn-copy">Copy</button></div>
+<pre>Dobrý den [jméno],
+
+vaše svatby na Instagramu jsou nádherné, zvlášť [konkrétní svatba].
+
+Vyšívám ručně svatební tácky na prstýnky se jmény a datem — v Praze, na míru, 2–3 týdny. Ráda bych vám jeden poslala jako vzorek pro vaše páry, případně vás uvedla jako doporučeného koordinátora u mě. Dává vám to smysl?
+
+Anna, @anna_s_adorable_creations</pre>
+    </div>
+
+    <h3>Baby / kids store — Čeština <span class="small">(email preferred)</span></h3>
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">Email · CZ</span><button class="btn-copy">Copy</button></div>
+<pre>Předmět: Ručně vyšívané dárky pro miminka — nabídka komisního prodeje
+
+Dobrý den,
+
+jsem Anna, vyšívám ručně v Praze obrázky do dětských pokojů a dárky pro novorozence (@anna_s_adorable_creations). Ráda bych vám nabídla 3–5 hotových kusů do komise s marží 25–30 % a možnost objednávek na míru pro vaše zákazníky.
+
+Mohu se zastavit s ukázkou? Uvedu čas podle vás.
+
+S pozdravem,
+Anna · tel. · IČO</pre>
+    </div>
+
+    <h3>Expat playgroup / kindergarten — English</h3>
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">DM or email · EN</span><button class="btn-copy">Copy</button></div>
+<pre>Hi [name],
+
+I'm a Prague-based embroiderer making personalised name hoops and birthday gifts for children, in English and Czech. I'd love to offer your families a small discount and, if it's useful, donate a piece for your next raffle or event.
+
+Happy to send photos or bring one by.
+
+Anna, @anna_s_adorable_creations</pre>
+    </div>
+
+    <h3>Follow-up — any recipient, CZ / EN</h3>
+    <div class="copyblock">
+      <div class="cb-head"><span class="cb-title">Day 18 · bilingual</span><button class="btn-copy">Copy</button></div>
+<pre>Jen krátce navazuji na svou zprávu — kdyby to dávalo smysl, ráda přinesu vzorek. Pokud ne, rozumím. Hezký den!
+—
+Just following up on my note — happy to bring a sample if it's of interest. If not, no problem at all. Have a good week!</pre>
+    </div>
+
+    <hr class="stitch">
+
+    <h2 id="pools"><span class="num">In parallel</span>Organic pools — participation, no lists</h2>
+    <p>These are places to <strong>be present and answer questions</strong>, not to advertise. One helpful reply with a photo of a relevant piece beats ten adverts.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Pool</th><th>Language</th><th>How to use it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Facebook:</strong> “Maminky v Praze”, “Těhotné a maminky 2026”, district mum groups</td><td>CZ</td><td>Answer gift-idea threads; post in “handmade Fridays” if the group runs them</td></tr>
+          <tr><td><strong>Facebook:</strong> “Prague Expats”, “Expat Mums Prague / Prague Moms”, “Crowdsourced Prague”</td><td>EN</td><td>Same — expats ask “where do I get a personalised gift” every week</td></tr>
+          <tr><td><strong>eMimino.cz</strong>, <strong>Modrykonik.cz</strong> forums</td><td>CZ</td><td>Profile plus occasional helpful posts</td></tr>
+          <tr><td><strong>Reddit r/Prague</strong></td><td>EN</td><td>Reply to gift and handmade threads</td></tr>
+          <tr><td><strong>Fler.cz</strong></td><td>CZ</td><td>Open a shop — Fler has its own buyer traffic and search</td></tr>
+          <tr><td><strong>Dyzajn market, Mint Market, Christmas markets</strong></td><td>CZ/EN</td><td>A stall once or twice a year: content, contacts, cash</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="checklist">
+      <li><label class="check"><input type="checkbox" data-k="04-g1"><span class="box"></span><span class="txt"><strong>Joined the Czech and expat parent groups</strong> and read their rules.</span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-g2"><span class="box"></span><span class="txt"><strong>Fler.cz shop opened.</strong></span></label></li>
+      <li><label class="check"><input type="checkbox" data-k="04-g3"><span class="box"></span><span class="txt"><strong>One market applied to</strong> for the coming season.</span></label></li>
+    </ul>
+
+    <h2 id="never"><span class="num">Guardrails</span>Anti-patterns — do not</h2>
+    <ul class="dont">
+      <li>Do not DM individuals found via hashtags or a competitor’s follower list.</li>
+      <li>Do not use any auto-follow, auto-like or auto-DM tool. Blocks start around 20–50 actions per hour on a small account.</li>
+      <li>Do not send more than 5 first-contact messages a day, or the same template unchanged.</li>
+      <li>Do not collect or store data on private individuals — see <a href="05-legal.html#gdpr">file 05, GDPR</a>.</li>
+    </ul>
+
+    <nav class="pagenav">
+      <a href="03-copy.html"><span class="dir">Previous</span><span class="ttl">03 · Bio &amp; Pinned-Post Copy</span></a>
+      <a class="next" href="05-legal.html"><span class="dir">Next</span><span class="ttl">05 · Czech Tax &amp; Legal Caveats</span></a>
+    </nav>
+
+    <footer class="foot">
+      <p class="foot-note"><strong>Progress is saved in this browser only.</strong> Export a backup before you switch device, change browser or clear site data — or copy a save link and open it there.</p>
+      <div class="foot-btns">
+        <button class="btn-ghost" data-export>Export backup</button>
+        <button class="btn-ghost" data-import>Import backup</button>
+        <button class="btn-ghost" data-savelink>Copy save link</button>
+        <span class="foot-sep"></span>
+        <button class="btn-ghost" data-reset="page">Reset page</button>
+        <button class="btn-ghost danger" data-reset="all">Reset all</button>
+      </div>
+      <input type="file" accept=".json,application/json" hidden data-importfile>
+      <p class="foot-sig">Anna’s Adorable Creations · Instagram roadmap</p>
+    </footer>
+
+  </div>
+</main>
+</div>
+<script src="assets/keys.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
